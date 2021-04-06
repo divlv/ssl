@@ -1,0 +1,3 @@
+#!/bin/bash
+#
+docker run -p 80:80 -v "$(pwd)"/http.conf:/etc/nginx/nginx.conf:ro -v "$(pwd)"/www:/etc/nginx/html:ro -it nginx:1.19.9-alpine
