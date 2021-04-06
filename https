@@ -1,3 +1,3 @@
 #!/bin/bash
 #
-docker run -p 443:443 -v "$(pwd)"/https.conf:/etc/nginx/nginx.conf:ro -v "$(pwd)"/www:/etc/nginx/html:ro  -v "$(pwd)"/ssl:/ssl:ro-it nginx:1.19.9-alpine
+docker run -p 443:443 -v "$(pwd)"/https.conf:/etc/nginx/nginx.conf:ro -v "$(pwd)"/www:/etc/nginx/html:ro  -v "$(pwd)"/ssl:/ssl:ro -it nginx:1.19.9-alpine

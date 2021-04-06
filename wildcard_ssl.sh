@@ -9,7 +9,7 @@ CERT_PATH="$(pwd)"/ssl
 mkdir -p $CERT_PATH
 
 # Getting WildCard certificate:
-certbot certonly --manual --preferred-challenges=dns --email $EMAIL --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d $HOST -d *.$HOST
+certbot certonly --manual --preferred-challenges=dns --email $EMAIL --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d "$HOST" -d "*.$HOST"
 
 # Copy CERTIFICATE files:
 cp /etc/letsencrypt/archive/$HOST/privkey1.pem $CERT_PATH/$KEY_FILE_NAME
