@@ -10,10 +10,10 @@ Step-by-step instruction:
 Checkout the latest code: `git clone https://github.com/divlv/ssl
 `
 ### 2. Adjust the source
-Edit `wildcard_ssl.sh` file. Change the **HOST** value to your desired domain name.
+Edit `wildcard_ssl.sh` file. Change the **HOST** value to your desired domain name (**root** domain name, e.g. `example.com`, **not** `anything.example.com` !)
 
 ### 3. Get the certificate(s)
- Execute the `wildcard_ssl.sh` script. Remember, we should have 2 certificate requests: for example.com itdself (root domain) **and** for *.example.com. The interactive output may look like this:
+ Execute the `wildcard_ssl.sh` script. Remember, we should have 2 certificate requests: for `example.com` itdself (root domain) **and** for `*.example.com`. The interactive output may look like this:
 
  ```
  root@server:/opt/ssl# ./wildcard_ssl.sh
@@ -98,4 +98,6 @@ Just to check, e.g. your firewall of whatever, you may use `http` script - this 
 
 Go to https://example.com with your browser and check the certificate is in place.
 
-If you have any subdomain configured, e.g. for this particular machine, you may go to https://subdomain.example.com and confirm the certificate is operational too.
+If you have any subdomain configured to the same IP-address, e.g. for this particular machine, you may go to https://subdomain.example.com and confirm the certificate is operational too.
+
+eof
