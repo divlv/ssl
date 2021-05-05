@@ -75,6 +75,25 @@ Especially, if you're testing stuff, remember, LetsEncrypt doesn't see the TXT u
 
 Make a pause in your process after creating the second TXT record by LetsEncrypt request (see the script log above).
 
+BTW, if you're using **Terraform** with **Azure**, the following syntax will do the job:
+```
+resource "azurerm_dns_txt_record" "letsencryptverify" {
+  name                = "_acme-challenge"
+  zone_name           = azurerm_dns_zone.my_dns_zone.name
+  resource_group_name = my-resource-group-name
+  ttl                 = 300
+
+  record {
+    value = "M-J2d8jjksd2xza-b1jaw7TnaTaiKekyCCkhj72GGhts"
+  }
+
+  record {
+    value = "kk8hdjw96--RJ3Ct95yaf6R1vFEEzkviAk2hje9hskHs"
+  }
+}
+```
+
+
 ### 4. Start the web service
 
 Execute `https` script. Sample output provided below:
